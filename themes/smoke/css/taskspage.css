@@ -1,0 +1,105 @@
+.tp {
+	
+}
+
+/*
+ * Projects
+ */
+.tp-project {
+	border-bottom: 1px solid #ddd;
+	display: block;
+	margin: 2px 0;
+	overflow: hidden;
+	padding: 2px 4px;
+}
+
+.tp-project.ui-sortable-helper {
+	background-color: #f2f2f2;
+	border-bottom: none;
+	opacity: 0.6;
+}
+
+.tp-project .tp-icon-handle {
+	display: block;
+	float: left;
+	width: 16px;
+}
+
+.tp-project .tp-project-name {
+	display: block;
+	margin-left: 18px;
+	padding: 2px 0 4px;
+}
+
+/*
+ * Tasks
+ */
+.tp-tasks {
+	padding: 0;
+}
+
+.tp-task {
+	border-bottom: 1px solid #ddd;
+	display: block;
+	margin: 2px 0;
+	overflow: hidden;
+	padding: 2px 4px;
+}
+
+.tp-task.ui-sortable-helper {
+	background-color: #f2f2f2;
+	border-bottom: none;
+	opacity: 0.6;
+}
+
+.tp-task .tp-icon-handle {
+	display: block;
+	float: left;
+	width: 16px;
+}
+
+.tp-task .tp-task-name {
+	display: block;
+	margin-left: 18px;
+	padding: 2px 0 4px;
+}
+
+
+/*
+ * Icons
+ */
+.tp-icon {
+	cursor: pointer;
+	display: block;
+}
+
+.tp-icon-128 {
+	height: 128px;
+	width: 128px;
+}
+
+.tp-icon-64 {
+	height: 64px;
+	width: 64px;
+}
+
+.tp-icon-32 {
+	height: 32px;
+	width: 32px;
+}
+
+.tp-icon-24 {
+	background: transparent url("../images/tp-icons-default-24.png") 0 0 no-repeat;
+	height: 24px;
+	width: 24px;
+}
+
+.tp-icon-16 {
+	background: transparent url("../images/tp-icons-default-16.png") 0 0 no-repeat;
+	height: 16px;
+	width: 16px;
+}
+
+.tp-icon-handle {
+	background-position: -160px 0;
+}
