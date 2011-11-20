@@ -8,7 +8,7 @@
 	$.fn.tasklist = function(options) {
 		return this.each(function(){
 			var $list = $(this);
-			
+			console.log('task list created');
 		});
 	};
 })(jQuery);

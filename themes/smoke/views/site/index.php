@@ -10,8 +10,10 @@
 <ul id="tasklist" class="sortable selectable tp-tasks">
 	<?php foreach ($tasks as $task) : ?>
 	<li id="task_<?php echo $task->id; ?>" class="ui-widget-content tp-task">
-		<span class="tp-icon tp-icon-24 tp-icon-handle"></span>
-		<span class="tp-task-name"><?php echo $task->name; ?></span>
+		<div>
+			<span class="tp-icon tp-icon-24 tp-icon-handle"></span>
+			<span class="tp-task-name"><?php echo $task->name; ?></span>
+		</div>
 	</li>
 	<?php endforeach; ?>
 </ul>
