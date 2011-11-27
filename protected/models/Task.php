@@ -6,12 +6,18 @@
  * The followings are the available columns in table '{{task}}':
  * @property integer $id
  * @property string $name
- * @property integer $project
- * @property integer $owner
- * @property integer $user
  * @property string $description
  * @property integer $start
  * @property integer $end
+ * @property integer $priority
+ * @property integer $owner
+ * @property integer $project
+ * @property integer $parent
+ * @property integer $order_no
+ * @property integer $assigned_to
+ * @property integer $assigned_by
+ * @property integer $predecessor
+ * @property integer $successor
  * @property integer $status
  */
 class Task extends CActiveRecord
@@ -42,12 +48,12 @@ class Task extends CActiveRecord
 		// will receive user inputs.
 		return array(
 		array('name', 'required'),
-		array('project, user, start, end, status', 'numerical', 'integerOnly'=>true),
+		array('project, owner, start, end, status', 'numerical', 'integerOnly'=>true),
 		array('name', 'length', 'max'=>128),
 		array('description', 'safe'),
 		// The following rule is used by search().
 		// Please remove those attributes that should not be searched.
-		array('id, name, project, owner, user, description, start, end, status', 'safe', 'on'=>'search'),
+		array('id, name, project, owner, description, start, end, status', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -71,12 +77,18 @@ class Task extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'name' => 'Name',
-			'project' => 'Project',
-			'owner' => 'Owner',
-			'user' => 'User',
 			'description' => 'Description',
 			'start' => 'Start',
 			'end' => 'End',
+			'priority' => 'Priority',
+			'owner' => 'Owner',
+			'project' => 'Project',
+			'parent' => 'Parent',
+			'order_no' => 'Order',
+			'assigned_to' => 'Assigned To',
+			'assigned_by' => 'Assigned By',
+			'predecessor' => 'Predecessor',
+			'successor' => 'Successor',
 			'status' => 'Status',
 		);
 	}
@@ -94,12 +106,18 @@ class Task extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('name',$this->name,true);
-		$criteria->compare('project',$this->project);
-		$criteria->compare('owner',$this->owner);
-		$criteria->compare('user',$this->user);
 		$criteria->compare('description',$this->description,true);
 		$criteria->compare('start',$this->start);
 		$criteria->compare('end',$this->end);
+		$criteria->compare('priority',$this->priority);
+		$criteria->compare('owner',$this->owner);
+		$criteria->compare('project',$this->project);
+		$criteria->compare('parent',$this->parent);
+		$criteria->compare('order_no',$this->order_no);
+		$criteria->compare('assigned_to',$this->assigned_to);
+		$criteria->compare('assigned_by',$this->assigned_by);
+		$criteria->compare('predecessor',$this->predecessor);
+		$criteria->compare('successor',$this->successor);
 		$criteria->compare('status',$this->status);
 
 		return new CActiveDataProvider($this, array(

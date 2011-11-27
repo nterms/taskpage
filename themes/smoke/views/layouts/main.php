@@ -21,6 +21,10 @@ Yii::app()->getClientScript()->registerCoreScript('jquery.ui');
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->theme->baseUrl; ?>/css/taskspage.css" />
 
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+	
+	<script type="text/javascript">
+	TP.name = 'Task page';
+	</script>
 </head>
 
 <body>

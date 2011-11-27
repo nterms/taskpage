@@ -22,9 +22,9 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'user'); ?>
-		<?php echo $form->dropDownList($model, 'user', CHtml::listData(User::model()->findAll(), 'id', 'username'), array('empty' => '-- Select User --')); //$form->textField($model,'user'); ?>
-		<?php echo $form->error($model,'user'); ?>
+		<?php echo $form->labelEx($model,'owner'); ?>
+		<?php echo $form->dropDownList($model, 'owner', CHtml::listData(User::model()->findAll(), 'id', 'username'), array('empty' => '-- Select User --')); //$form->textField($model,'user'); ?>
+		<?php echo $form->error($model,'owner'); ?>
 	</div>
 
 	<div class="row">

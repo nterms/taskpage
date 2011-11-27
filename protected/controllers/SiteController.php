@@ -34,7 +34,7 @@ class SiteController extends Controller
 	public function actionIndex()
 	{
 		$model = new Task();
-		$tasks = Task::model()->findAll();
+		$tasks = Task::model()->findAllByAttributes(array('owner' => Yii::app()->user->id));
 		
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'

@@ -21,7 +21,7 @@ $this->menu=array(
 		'id',
 		'name',
 		'project',
-		'user',
+		'owner',
 		'description',
 		'start',
 		'end',

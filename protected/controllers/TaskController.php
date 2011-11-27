@@ -61,21 +61,33 @@ class TaskController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Task;
+		$model = new Task;
+		$ajax = Yii::app()->request->isAjaxRequest;
+		$saved = false;
 
 		// Uncomment the following line if AJAX validation is needed
-		 $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['Task']))
 		{
 			$model->attributes=$_POST['Task'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			if($model->save()) {
+				if($ajax) {
+					$saved = $model->getAttributes();
+				} else {
+					$this->redirect(array('view','id'=>$model->id));
+				}
+			}
 		}
 
-		$this->render('create',array(
-			'model'=>$model,
-		));
+		if($ajax) {
+			echo function_exists('json_encode') ? json_encode($saved) : CJSON::encode($saved);
+			Yii::app()->end();
+		} else {
+			$this->render('create',array(
+				'model'=>$model,
+			));
+		}
 	}
 
 	/**
